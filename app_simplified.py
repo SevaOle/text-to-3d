@@ -12,14 +12,15 @@ import uuid
 from datetime import datetime
 import time
 import json
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 CORS(app)
 
 # ==================== CONFIGURATION ====================
 # Your API Keys
-OPENAI_API_KEY = ""
-MESHY_API_KEY = ""
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+THREED_API_KEY = os.getenv("THREED_API_KEY")
 
 # Storage folders
 UPLOAD_FOLDER = 'static/generated_images'
