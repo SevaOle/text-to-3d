@@ -177,6 +177,7 @@ async function convertTo3D() {
     
     modelStatus.className = 'model-status loading';
     modelStatus.textContent = '🎭 Converting to 3D model... This may take 2-3 minutes. Please wait.';
+    modelStatus.style.display = "block";
     download3DBtn.disabled = true;
     
     try {
@@ -215,7 +216,7 @@ async function convertTo3D() {
                 <br><br>
                 <small>Click "View in 3D Viewer" to interact with your model in the browser!</small>
             `;
-            modelStatus.display = "block";
+            modelStatus.style.display = "block";
         } else {
             throw new Error(data.error || 'Failed to convert to 3D');
         }
