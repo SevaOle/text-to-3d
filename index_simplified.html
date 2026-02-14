@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator - Idea to Visual to 3D</title>
+    <link rel="stylesheet" href="style_simplified.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>✨ AI Image Generator</h1>
+            <p class="subtitle">Transform your ideas into stunning visuals and 3D models</p>
+            <p class="tech-badge">Powered by DALL-E 3 + Meshy AI</p>
+        </header>
+
+        <!-- Input Section -->
+        <section class="input-section">
+            <div class="input-container">
+                <textarea 
+                    id="ideaInput" 
+                    placeholder="Describe your idea... (e.g., 'A futuristic cyberpunk city at night with neon lights')"
+                    rows="4"
+                ></textarea>
+                <div class="input-tips">
+                    💡 <strong>Tips:</strong> Be specific! Describe colors, mood, style, and details for best results.
+                </div>
+                <button id="generateBtn" class="generate-btn">
+                    <span class="btn-text">Generate Image</span>
+                    <span class="btn-loader" style="display: none;">Generating...</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Status Message -->
+        <div id="statusMessage" class="status-message"></div>
+
+        <!-- Image Gallery -->
+        <section class="gallery-section">
+            <h2 class="gallery-title">Your Creations</h2>
+            <div id="imageGallery" class="image-gallery">
+                <!-- Images will be dynamically inserted here -->
+                <div class="empty-gallery">
+                    <p>🎨 No images yet. Start by entering your idea above!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Image Details & 3D Conversion -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="Generated Image">
+                </div>
+                <div class="modal-info">
+                    <h3>Image Details</h3>
+                    <p id="modalPrompt" class="prompt-text"></p>
+                    <div class="modal-actions">
+                        <button id="download3DBtn" class="action-btn primary">
+                            🎭 Convert to 3D Model
+                        </button>
+                        <button id="downloadImageBtn" class="action-btn secondary">
+                            📥 Download Image
+                        </button>
+                    </div>
+                    <div id="modelStatus" class="model-status"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app_simplified.js"></script>
+</body>
+</html>
